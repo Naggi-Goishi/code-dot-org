@@ -57,7 +57,7 @@ def saucelabs_browser
       # decrease idle_timeout to help avoid "too many connection resets" error
       # Depends on happening after given a URL through creating the webdriver.
       # Hack: We're accessing a private method here, as an experiment
-      http_client.send(:http).idle_timeout = 3
+      http_client.send(:http).idle_timeout = 0
     rescue StandardError
       raise if retries >= MAX_CONNECT_RETRIES
       puts 'Failed to get browser, retrying...'
