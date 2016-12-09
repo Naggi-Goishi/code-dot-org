@@ -124,7 +124,7 @@ class User < ActiveRecord::Base
   has_many :segments, through: :workshops
 
   has_and_belongs_to_many :workshops_as_facilitator,
-    class_name: Workshop,
+    class_name: 'Workshop',
     foreign_key: :facilitator_id,
     join_table: :facilitators_workshops
 
